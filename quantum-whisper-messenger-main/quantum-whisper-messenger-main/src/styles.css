@@ -1,0 +1,123 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — "Quantum Cipher Lab"
+ *
+ * A dark, terminal-inspired security aesthetic: deep navy surface, cyan
+ * photon accents, amber warnings and emerald verification states. Mono type
+ * is reserved for cryptographic material so ciphertext always reads as data.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+  --shadow-panel: 0 24px 60px -24px oklch(0.05 0.02 260 / 80%);
+  --shadow-glow: 0 0 32px -6px oklch(0.8 0.15 195 / 35%);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.155 0.028 262);
+  --foreground: oklch(0.93 0.014 210);
+  --card: oklch(0.205 0.03 262);
+  --card-foreground: oklch(0.93 0.014 210);
+  --popover: oklch(0.205 0.03 262);
+  --popover-foreground: oklch(0.93 0.014 210);
+  --primary: oklch(0.82 0.14 195);
+  --primary-foreground: oklch(0.16 0.03 262);
+  --secondary: oklch(0.27 0.035 262);
+  --secondary-foreground: oklch(0.88 0.02 210);
+  --muted: oklch(0.245 0.032 262);
+  --muted-foreground: oklch(0.68 0.035 230);
+  --accent: oklch(0.31 0.055 210);
+  --accent-foreground: oklch(0.93 0.014 210);
+  --destructive: oklch(0.66 0.21 25);
+  --destructive-foreground: oklch(0.98 0.01 25);
+  --success: oklch(0.79 0.16 155);
+  --success-foreground: oklch(0.17 0.04 155);
+  --warning: oklch(0.83 0.15 82);
+  --warning-foreground: oklch(0.2 0.05 82);
+  --border: oklch(0.32 0.04 260);
+  --input: oklch(0.3 0.04 260);
+  --ring: oklch(0.7 0.1 195);
+}
+
+.dark {
+  --background: oklch(0.155 0.028 262);
+  --foreground: oklch(0.93 0.014 210);
+  --card: oklch(0.205 0.03 262);
+  --card-foreground: oklch(0.93 0.014 210);
+  --popover: oklch(0.205 0.03 262);
+  --popover-foreground: oklch(0.93 0.014 210);
+  --primary: oklch(0.82 0.14 195);
+  --primary-foreground: oklch(0.16 0.03 262);
+  --secondary: oklch(0.27 0.035 262);
+  --secondary-foreground: oklch(0.88 0.02 210);
+  --muted: oklch(0.245 0.032 262);
+  --muted-foreground: oklch(0.68 0.035 230);
+  --accent: oklch(0.31 0.055 210);
+  --accent-foreground: oklch(0.93 0.014 210);
+  --destructive: oklch(0.66 0.21 25);
+  --destructive-foreground: oklch(0.98 0.01 25);
+  --success: oklch(0.79 0.16 155);
+  --success-foreground: oklch(0.17 0.04 155);
+  --warning: oklch(0.83 0.15 82);
+  --warning-foreground: oklch(0.2 0.05 82);
+  --border: oklch(0.32 0.04 260);
+  --input: oklch(0.3 0.04 260);
+  --ring: oklch(0.7 0.1 195);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    background-image:
+      radial-gradient(1100px 520px at 85% -10%, oklch(0.42 0.09 195 / 22%), transparent 62%),
+      radial-gradient(900px 500px at -10% 110%, oklch(0.4 0.08 260 / 28%), transparent 60%);
+    background-attachment: fixed;
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: oklch(0.82 0.14 195 / 30%);
+  }
+}
